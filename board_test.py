@@ -21,26 +21,28 @@ class EmptyBoardTest(unittest.TestCase):
     def test_a_board_with_three_of_the_same_symbol_in_the_first_row_has_a_winner(self):
          #First you need a board
          #Next you need to check if three of same symbol are in the first row
-         # If so, Who has won
-         # board = [['x','x','x'],[' ', ' ',' '], [' ',' ',' ']]
-         # for i in board:
-         if self.board[0] == self.board[1] == self.board[2]:
-             print("Three of the same sybols are in the first row")
+         board = self.board
+         board.mark(0,'x')
+         board.mark(1,'x')
+         board.mark(2,'x')
+         self.assertTrue(board.is_winner_of_board())
 
-             self.assertTrue(self.board.is_winner_of_board())
 
     def test_a_board_with_three_of_the_same_symbol_in_cols_rows_has_a_winner(self):
+        #
+        # if (self.board[0]== self.board[3] == self.board[6]) or (self.board[1]== self.board[4] == self.board[7]) or\
+        # (self.board[2]== self.board[5] == self.board[8]) :
 
-        if (self.board[0]== self.board[3] == self.board[6]) or (self.board[1]== self.board[4] == self.board[7]) or\
-        (self.board[2]== self.board[5] == self.board[8]) :
-            self.assertTrue(self.board.is_winner_of_board())
+        board = self.board
+        board.mark(0,'o')
+        board.mark(3,'o')
+        board.mark(6,'o')
+        self.assertTrue(board.is_winner_of_board())
 
 
-    def test_a_board_with_three_of_the_same_symbol_in_the_diag_row_has_a_winner(self):
 
-        if ((self.board[0] == self.board[4] == self.board[8] ) or (self.board[2] == self.board[4] ==self.board[6])):
 
-            self.assertTrue(self.board.is_winner_of_board())
+
 
 
 
