@@ -27,17 +27,60 @@ class EmptyBoardTest(unittest.TestCase):
          board.mark(2,'x')
          self.assertTrue(board.is_winner_of_board())
 
+    def test_a_board_with_three_of_the_same_symbol_in_the_second_row_has_a_winner(self):
+         second_row = self.board
+         second_row.mark(3,'x')
+         second_row.mark(4,'x')
+         second_row.mark(5,'x')
+         self.assertTrue(second_row.is_winner_of_board())
 
-    def test_a_board_with_three_of_the_same_symbol_in_cols_rows_has_a_winner(self):
-        #
-        # if (self.board[0]== self.board[3] == self.board[6]) or (self.board[1]== self.board[4] == self.board[7]) or\
-        # (self.board[2]== self.board[5] == self.board[8]) :
+    def test_a_board_with_three_of_the_same_symbol_in_the_third_row_has_a_winner(self):
+         third_row = self.board
+         third_row.mark(6,'x')
+         third_row.mark(7,'x')
+         third_row.mark(8,'x')
+         self.assertTrue(third_row.is_winner_of_board())
 
-        board = self.board
-        board.mark(0,'o')
-        board.mark(3,'o')
-        board.mark(6,'o')
-        self.assertTrue(board.is_winner_of_board())
+    def test_a_board_with_three_of_the_same_symbol_in_first_col_has_a_winner(self):
+        first_cols = self.board
+        first_cols.mark(0,'o')
+        first_cols.mark(3,'o')
+        first_cols.mark(6,'o')
+        self.assertTrue(first_cols.is_winner_of_board())
+
+    def test_a_board_with_three_of_the_same_symbol_in_second_col_has_a_winner(self):
+
+        second_col_board = self.board
+        second_col_board.mark(1,'o')
+        second_col_board.mark(4,'o')
+        second_col_board.mark(7,'o')
+        self.assertTrue(second_col_board.is_winner_of_board())
+
+    def test_a_board_with_three_of_the_same_symbol_in_third_cols_has_a_winner(self):
+
+        third_col_board = self.board
+        third_col_board.mark(2,'o')
+        third_col_board.mark(5,'o')
+        third_col_board.mark(8,'o')
+        self.assertTrue(third_col_board.is_winner_of_board())
+
+    def test_a_board_with_three_of_the_same_symbol_win_by_diagonal_Left_to_right(self):
+        win_by_diagonal_board = self.board
+        win_by_diagonal_board.mark(0,'o')
+        win_by_diagonal_board.mark(4,'o')
+        win_by_diagonal_board.mark(8,'o')
+        self.assertTrue(win_by_diagonal_board.is_winner_of_board())
+
+    def test_a_board_with_three_of_the_same_symbol_win_by_diagonal_right_to_left(self):
+      diagonal_right_to_left = self.board
+      diagonal_right_to_left.mark(6,'x')
+      diagonal_right_to_left.mark(4,'x')
+      diagonal_right_to_left.mark(2,'x')
+      self.assertTrue(diagonal_right_to_left.is_winner_of_board())
+
+
+
+
 
 
 
