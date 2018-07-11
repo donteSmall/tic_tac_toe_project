@@ -63,6 +63,7 @@ class EmptyBoardTest(unittest.TestCase):
         third_col_board.mark(5,'o')
         third_col_board.mark(8,'o')
         self.assertTrue(third_col_board.is_winner_of_board())
+        self.draw()
 
     def test_a_board_with_three_of_the_same_symbol_win_by_diagonal_Left_to_right(self):
         win_by_diagonal_board = self.board
@@ -77,6 +78,8 @@ class EmptyBoardTest(unittest.TestCase):
       diagonal_right_to_left.mark(4,'x')
       diagonal_right_to_left.mark(2,'x')
       self.assertTrue(diagonal_right_to_left.is_winner_of_board())
+
+
 
 
 

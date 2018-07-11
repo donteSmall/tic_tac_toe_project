@@ -17,12 +17,9 @@ class Board():
 
     def is_winner_of_board(self):
 
-
-
         winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]]
 
         for group in winningCombos:
-
 
             if self.spaces[group[0]] == self.spaces[group[1]] == self.spaces[group[2]]:
                 if self.spaces[group[0]] == 'x':
@@ -31,15 +28,17 @@ class Board():
                 elif self.spaces[group[0]] == 'o':
 
                     print("O won board")
-                else:
-                    print("Board is tied, old chap !!!")
-        return 1
+
+        return True
 
 
-    def draw(self,board):
+    def draw(foo):
         ttt_board = self.board
         print("-------        ")
         print("|{}|{}|{}| (1,2,3)".format(ttt_board[0], ttt_board[1], ttt_board[2]))
         print("|{}|{}|{}| (4,5,6)".format(ttt_board[3], ttt_board[4], ttt_board[5]))
         print("|{}|{}|{}| (7,8,9)".format(ttt_board[6], ttt_board[7], ttt_board[8]))
         print("-------        ")
+
+
+        return draw()
