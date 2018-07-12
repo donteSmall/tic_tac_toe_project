@@ -3,11 +3,4 @@ language: python
   - 3.6
   - 3.7
 
-install:
-  - pip3 install coverage
-
-script: coverage run ./board_test.py
-
-after_success:
-  - coverage report -m
-
+script: python ./board_test.py
