@@ -14,7 +14,6 @@ class Board():
     def __getitem__(self,space):
          return self.spaces[space]
 
-
     def is_winner_of_board(self):
 
         winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]]
@@ -32,13 +31,15 @@ class Board():
         return True
 
 
-    def draw(foo):
-        ttt_board = self.board
-        print("-------        ")
-        print("|{}|{}|{}| (1,2,3)".format(ttt_board[0], ttt_board[1], ttt_board[2]))
-        print("|{}|{}|{}| (4,5,6)".format(ttt_board[3], ttt_board[4], ttt_board[5]))
-        print("|{}|{}|{}| (7,8,9)".format(ttt_board[6], ttt_board[7], ttt_board[8]))
-        print("-------        ")
-
-
-        return draw()
+    def draw(self):
+        #ttt_board var could be changed to just self.spaces
+        nones_to_spaces = [ " " if s is None else s for s in self.spaces]
+        return """
+-------
+|{}|{}|{}|
+-------
+|{}|{}|{}|
+-------
+|{}|{}|{}|
+-------
+        """.strip().format(*nones_to_spaces)
