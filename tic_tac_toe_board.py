@@ -14,21 +14,23 @@ class Board():
     def __getitem__(self,space):
          return self.spaces[space]
 
-    def is_winner_of_board(self):
+    def is_a_way_to_win_a_board(self):
 
-        winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]]
+        winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
+                        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                        [0, 4, 8], [6, 4, 2]]
 
         for group in winningCombos:
 
             if self.spaces[group[0]] == self.spaces[group[1]] == self.spaces[group[2]]:
+
                 if self.spaces[group[0]] == 'x':
-                    print("X won board")
+                    return "X won board"
 
                 elif self.spaces[group[0]] == 'o':
 
-                    print("O won board")
-
-        return True
+                    return "O won board"
+        return -1
 
 
     def draw(self):
