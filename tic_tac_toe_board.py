@@ -22,11 +22,13 @@ class Board():
         for group in winningCombos:
 
             if self.spaces[group[0]] == self.spaces[group[1]] == self.spaces[group[2]]:
-
                 return True
+            elif:
+                return False
+            else :
+                return None
 
 
-        return False
 
 
 

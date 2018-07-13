@@ -33,7 +33,7 @@ class EmptyBoardTest(unittest.TestCase):
          self.board.mark(4,'x')
          self.board.mark(5,'x')
          self.assertTrue(self.board.is_there_a_winner())
-         
+
 
     def test_a_board_with_three_of_the_same_symbol_in_the_third_row_has_a_winner(self):
 
