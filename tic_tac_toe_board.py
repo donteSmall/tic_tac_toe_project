@@ -14,8 +14,7 @@ class Board():
     def __getitem__(self,space):
          return self.spaces[space]
 
-    def is_a_way_to_win_a_board(self):
-
+    def is_there_a_winner(self):
         winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
                         [0, 3, 6], [1, 4, 7], [2, 5, 8],
                         [0, 4, 8], [6, 4, 2]]
@@ -24,13 +23,21 @@ class Board():
 
             if self.spaces[group[0]] == self.spaces[group[1]] == self.spaces[group[2]]:
 
-                if self.spaces[group[0]] == 'x':
-                    return "X won board"
+                return True
 
-                elif self.spaces[group[0]] == 'o':
 
-                    return "O won board"
-        return -1
+        return False
+
+
+
+
+
+    def has_a_winner(self):
+
+        if self.spaces[space] == 'x':
+            print "x has won this board"
+        else:
+            print "o has won this board"
 
 
     def draw(self):
