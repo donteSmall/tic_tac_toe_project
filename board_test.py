@@ -133,6 +133,5 @@ class EmptyBoardTest(unittest.TestCase):
 
     # display the board - return a string representation
 
-
 if __name__ == '__main__':
     unittest.main()
