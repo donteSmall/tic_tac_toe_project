@@ -106,6 +106,11 @@ class EmptyBoardTest(unittest.TestCase):
         self.board.mark(1,'x')
         self.assertEquals(expected_board.strip(), self.board.draw())
 
+    def test_is_there_a_winner_works(self):
+        
+
+
+
 
 
 
