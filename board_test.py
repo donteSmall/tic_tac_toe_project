@@ -36,14 +36,13 @@ class EmptyBoardTest(unittest.TestCase):
 
 
     def test_a_board_with_three_of_the_same_symbol_in_the_third_row_has_a_winner(self):
-
+         #import pdb; pdb.set_trace()
          self.board.mark(6,'x')
          self.board.mark(7,'x')
          self.board.mark(8,'x')
          self.assertTrue(self.board.is_there_a_winner())
 
     def test_a_board_with_three_of_the_same_symbol_in_first_col_has_a_winner(self):
-
         self.board.mark(0,'o')
         self.board.mark(3,'o')
         self.board.mark(6,'o')
@@ -79,6 +78,11 @@ class EmptyBoardTest(unittest.TestCase):
       self.board.mark(2,'x')
       self.assertTrue(self.board.is_there_a_winner())
 
+    def test_an_empty_board_has_no_winner(self):
+
+        self.assertFalse(self.board.is_there_a_winner())
+
+
     def test_draw_returns_a_string_description_of_the_board(self):
         expected_board = """
 -------
@@ -106,8 +110,10 @@ class EmptyBoardTest(unittest.TestCase):
         self.board.mark(1,'x')
         self.assertEquals(expected_board.strip(), self.board.draw())
 
-    def test_is_there_a_winner_works(self):
-        
+
+
+
+
 
 
 
