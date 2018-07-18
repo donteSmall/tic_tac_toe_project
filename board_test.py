@@ -97,6 +97,7 @@ class EmptyBoardTest(unittest.TestCase):
         self.assertEquals(expected_board.strip(), self.board.draw())
 
     def test_draw_returns_a_string_description_of_a_marked_board(self):
+        import pdb; pdb.set_trace()
         expected_board = """
 -------
 |x|x| |
@@ -109,6 +110,11 @@ class EmptyBoardTest(unittest.TestCase):
         self.board.mark(0,'x')
         self.board.mark(1,'x')
         self.assertEquals(expected_board.strip(), self.board.draw())
+
+print(help(EmptyBoardTest))
+
+
+
 
 
 

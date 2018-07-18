@@ -26,11 +26,32 @@ class Board():
 
         return False
 
+    def makeMove(self, letter, space):
+        self.spaces[space] = letter
 
+
+    def isSpaceFree(self, space):
+        return self.spaces[space] == ' '
+
+
+    def is_the_game_board_Full(self):
+        for i in range(0, 8):
+            if isSpaceFree(self, i):
+                return False
+        return True
+
+    def new_board():
+
+
+        board = []
+        for square in range(0,8):
+            board.append(" ")
+        return board
 
 
 
     def draw(self):
+
         #ttt_board var could be changed to just self.spaces
         nones_to_spaces = [ " " if s is None else s for s in self.spaces]
         return """
