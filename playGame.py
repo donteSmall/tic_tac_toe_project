@@ -46,16 +46,17 @@ class playGame(object):
 
     def start_game(self):
         players = self.pick_a_game_symbol() # X or O
-        player_one = 'x'
+        player_one = 'x '
 
 
         while True:
             #import pdb; pdb.set_trace()
-
             indx = self.mark_an_empty_space_with_player_symbol(self.board)
 
-            if player_one == "x":
-                player_one= "O"
+
+            if player_one == "X".lower():
+
+                player_one = "O"
             else:
                 player_one = "X"
 
@@ -69,7 +70,8 @@ class playGame(object):
             elif not [space for space in self.board if space is None]:
                     print('Congratulations ! The game is a tie!')
 
-            player_one= "X" if player_one == "X" else "O"
+
+
 
 
 
