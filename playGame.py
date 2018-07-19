@@ -64,11 +64,11 @@ class playGame(object):
 
             if self.board.is_there_a_winner():
                 print('Congratulations ! You have won the game!')
-                #break
+            
 
             elif not [space for space in self.board if space is None]:
                     print('Congratulations ! The game is a tie!')
-                    #break
+
             player_one= "X" if player_one == "X" else "O"
 
 

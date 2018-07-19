@@ -27,7 +27,7 @@ class Board():
         return False
 
     def __setitem__(self, space, item):
-        self.spaces[space] = item
+        self.mark(space, item)
 
     def __getitem__(self, space):
         return self.spaces[space]
