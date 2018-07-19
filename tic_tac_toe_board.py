@@ -26,27 +26,11 @@ class Board():
 
         return False
 
-    def makeMove(self, letter, space):
-        self.spaces[space] = letter
+    def __setitem__(self, space, item):
+        self.spaces[space] = item
 
-
-    def isSpaceFree(self, space):
-        return self.spaces[space] == ' '
-
-
-    def is_the_game_board_Full(self):
-        for i in range(0, 8):
-            if isSpaceFree(self, i):
-                return False
-        return True
-
-    def new_board():
-
-
-        board = []
-        for square in range(0,8):
-            board.append(" ")
-        return board
+    def __getitem__(self, space):
+        return self.spaces[space]
 
 
 
